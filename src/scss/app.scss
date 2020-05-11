@@ -1,0 +1,266 @@
+/* By Athlon Front-End Team */
+
+/* Core variables */
+@import 'base/vars';
+
+/* CSS Reset */
+@import 'base/reset';
+
+/* CSS print */
+@import 'base/print';
+
+/* Fonts */
+@import 'base/fonts';
+
+/* Mixins, helpers and functions */
+@import 'base/mixins';
+
+/* Vendor */
+
+/* Components */
+
+/* Browser specific styles */
+@import 'dirty/hacks';
+
+/* Demo styles */
+
+body {
+  background: $white;
+  color: $black;
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.5;
+}
+
+header {
+  padding-top: 32px;
+  font-size: 2em;
+  color: $caption-color;
+  text-align: center;
+  // background: $black url('../images/design/heading.png') center 20px no-repeat;
+
+  background-size: 160px;
+}
+
+main {
+  color: $black;
+  padding: 10px;
+}
+
+a {
+  color: $black;
+}
+
+.wrapper {
+  display: grid;
+}
+
+.logo {
+  grid-column: 1/2;
+}
+
+.right-menu {
+  grid-column: 3/4;
+  & a{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 20px;
+  }
+}
+
+section {
+  margin-top: 96px;
+}
+// About me
+// .wrapper-section {
+//   padding: 100px 60px;
+//   display: grid;
+//   grid-template-areas:
+//     "one one two two"
+//     "one one two two"
+//     "three three four four"
+//     "three three four four"
+//     "five five six six"
+//     "five five six six";
+//   gap: 10px;
+//   grid-template-columns: repeat(4, 1fr);
+//   grid-template-rows: repeat(4, 100px);
+// }
+
+// section.introduction {
+//   grid-area: 1/1/1/4;
+// }
+
+.introduction h1 {
+  font-size: $main_title;
+  font-weight: bold;
+}
+
+// section.about-me {
+//   grid-area: 6/3/6/6;
+// }
+
+.retro-frame {
+  border: solid 1px $black;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.options-border{
+  border-bottom: solid 1px $black;
+  position: relative;
+  width: 100%;
+  height: 25px;
+  z-index: -1;
+}
+
+.close-frame {
+  width: 5%;
+  border-left: solid 1px $black;
+  float: right;
+  text-align: center;
+}
+
+.content-about-me {
+  text-align: center;
+  display: block;
+  padding: 80px 50px;
+}
+
+.about-me{
+  position: relative;
+}
+
+.box {
+  border: solid 10px #FFF3B1;
+  background: #FFC2BE;
+  box-shadow: 20px 20px 0 5px #D699CE; 
+  position: absolute;
+}
+
+.box.square {
+  width: 100px;
+  height: 100px;
+  top: -80px;
+}
+
+.box.square--two {
+  box-shadow: 10px 10px 0 5px #D699CE; 
+  width: 60px;
+  height: 60px;
+  left: 250px;
+  top: -200px;
+}
+
+.box.rectangle {
+  width: 200px;
+  height: 80px;
+  bottom: -50px;
+  right: 0;
+}
+
+//Decoration
+.underline {
+  position: relative;
+}
+
+.underline:before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1.5vw;
+  bottom: 0px;
+  background: #c0c3fa;
+  z-index: -1;
+}
+
+.words_list .underline:before {
+  @extend .underline:before;
+  bottom: 10px !important;
+}
+
+.hover-underline {
+  position: relative;
+  cursor: pointer;
+  color:  #FF888E;
+}
+
+.hover-underline:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom:-5px;
+  left: 0;
+  background-color: #c0c3fa;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.hover-underline:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+  color:  #FF888E;
+  text-decoration: none;
+}
+
+.right-menu .hover-underline {
+  color: black;
+  text-decoration: none;
+} 
+
+.right-menu .hover-underline:before {
+  @extend .hover-underline:before;
+  bottom: 15px;
+}
+
+.change_words_wrapper{
+	position: relative;
+}
+.sentence{
+	margin: 0;
+	text-align: left;
+}
+
+.words_list {
+  display: inline;
+  text-indent: 10px;
+}
+
+.words_list span{
+  position: absolute;
+  opacity: 0;
+  overflow: hidden;
+  color: $black;
+  animation: changeWord 18s linear infinite 0s;
+}
+
+.words_list span:nth-child(2) {
+  animation-delay: 3s;
+}
+
+.words_list span:nth-child(3) {
+  animation-delay: 6s;
+}
+
+.words_list span:nth-child(4) {
+  animation-delay: 9s;
+}
+
+.words_list span:nth-child(5) {
+  animation-delay: 12s;
+}
+
+.words_list span:nth-child(6) {
+  animation-delay: 15s;
+}
+
+@keyframes changeWord {
+  0% { opacity: 0; }
+  2% { opacity: 0; transform: translateY(-30px); }
+  5% { opacity: 1; transform: translateY(0px);}
+  17% { opacity: 1; transform: translateY(0px); }
+  20% { opacity: 0; transform: translateY(30px); }
+  80% { opacity: 0; }
+  100% { opacity: 0; }
+}
