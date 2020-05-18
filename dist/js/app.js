@@ -117,7 +117,7 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_app_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/app.scss */ \"./src/scss/app.scss\");\n/* harmony import */ var _scss_app_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_app_scss__WEBPACK_IMPORTED_MODULE_0__);\n // Your JS Code goes here\n\n//# sourceURL=webpack:///./src/js/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_app_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/app.scss */ \"./src/scss/app.scss\");\n/* harmony import */ var _scss_app_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_app_scss__WEBPACK_IMPORTED_MODULE_0__);\n // Your JS Code goes here\n\n$('.responsive').slick({\n  dots: true,\n  arrows: false,\n  infinite: false,\n  speed: 300,\n  slidesToShow: 2,\n  slidesToScroll: 2,\n  responsive: [{\n    dots: true,\n    breakpoint: 1024,\n    settings: {\n      slidesToShow: 2,\n      slidesToScroll: 2\n    }\n  }, {\n    dots: true,\n    breakpoint: 600,\n    settings: {\n      slidesToShow: 1,\n      slidesToScroll: 1\n    }\n  }, {\n    dots: true,\n    breakpoint: 480,\n    settings: {\n      slidesToShow: 1,\n      slidesToScroll: 1\n    }\n  }]\n});\n\n//# sourceURL=webpack:///./src/js/app.js?");
 
 /***/ }),
 

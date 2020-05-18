@@ -23,11 +23,14 @@
 @import 'dirty/hacks';
 
 /* Demo styles */
+textarea:focus, input:focus, button:focus{
+  outline: none !important;
+}
 
 body {
   background: $white;
   color: $black;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Poppins', sans-serif;
   line-height: 1.5;
 }
 
@@ -46,8 +49,12 @@ main {
   padding: 10px;
 }
 
-a {
+a{
   color: $black;
+}
+a:hover {
+  color: $purple;
+  text-decoration: none;  
 }
 
 .wrapper {
@@ -61,7 +68,7 @@ a {
 .right-menu {
   grid-column: 3/4;
   & a{
-    font-size: 16px;
+    font-size: 22px;
     font-weight: bold;
     padding: 20px;
   }
@@ -70,43 +77,37 @@ a {
 section {
   margin-top: 96px;
 }
+
+h1, .right-menu a{
+  font-family: 'Bebas Neue', cursive;
+}
+
+section .title {
+  margin-bottom: 48px;
+}
 // About me
-// .wrapper-section {
-//   padding: 100px 60px;
-//   display: grid;
-//   grid-template-areas:
-//     "one one two two"
-//     "one one two two"
-//     "three three four four"
-//     "three three four four"
-//     "five five six six"
-//     "five five six six";
-//   gap: 10px;
-//   grid-template-columns: repeat(4, 1fr);
-//   grid-template-rows: repeat(4, 100px);
-// }
-
-// section.introduction {
-//   grid-area: 1/1/1/4;
-// }
-
 .introduction h1 {
   font-size: $main_title;
   font-weight: bold;
 }
 
-// section.about-me {
-//   grid-area: 6/3/6/6;
-// }
+section h1.title {
+  font-size: $title !important;
+  font-weight: bold;
+}
+
+.m-bottom-24 {
+  margin-bottom: 24px;;
+}
 
 .retro-frame {
-  border: solid 1px $black;
-  width: 70%;
+  border: solid 3px $black;
+  width: 85%;
   margin: 0 auto;
 }
 
 .options-border{
-  border-bottom: solid 1px $black;
+  border-bottom: solid 3px $black;
   position: relative;
   width: 100%;
   height: 25px;
@@ -115,7 +116,7 @@ section {
 
 .close-frame {
   width: 5%;
-  border-left: solid 1px $black;
+  border-left: solid 3px $black;
   float: right;
   text-align: center;
 }
@@ -131,9 +132,9 @@ section {
 }
 
 .box {
-  border: solid 10px #FFF3B1;
-  background: #FFC2BE;
-  box-shadow: 20px 20px 0 5px #D699CE; 
+  border: solid 10px $yellow;
+  background: $purple;
+  box-shadow: 13px 13px 0 5px $purple; 
   position: absolute;
 }
 
@@ -144,7 +145,8 @@ section {
 }
 
 .box.square--two {
-  box-shadow: 10px 10px 0 5px #D699CE; 
+  border: solid 7px $yellow;
+  box-shadow: 10px 10px 0 5px $purple; 
   width: 60px;
   height: 60px;
   left: 250px;
@@ -158,6 +160,141 @@ section {
   right: 0;
 }
 
+//Blog
+.blog-card {
+  height: 130px;
+  position: relative;
+}
+
+.img-post {
+  width: 100%;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.blog-title, .blog-extract {
+  padding-bottom: 16px;
+  padding-top: 8px;
+  font-weight: 300;
+}
+
+.blog-title {
+  // font-family: 'Caveat', cursive;
+  padding-top: 24px !important;
+  padding-bottom: 0px;
+  & p {
+    font-weight: 600;
+  }
+}
+
+.blog-title, .blog-link {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.blog-link {
+  background: $purple;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 8px 0;
+  &:hover {
+    background-color: $purple_tone_three;
+  }
+}
+
+.link-post, .link-post:hover{
+  color: white;
+  font-weight: bold;
+  display: block;
+  text-decoration: none;
+}
+
+.view-more, .btn-submit{
+  display: block;
+  margin: 96px auto 0 auto;
+  background: $purple;
+  color: $white;
+  padding: 10px 25px;
+  font-weight: bold;
+}
+.view-more:hover {
+  @extend .view-more;
+  background: $purple_tone_three;
+}
+
+.btn-submit{
+  margin: 24px auto 0 auto;
+}
+
+.btn-submit:hover {
+  background: $purple_tone_three;
+}
+
+
+
+//Contact
+#contact {
+  background-color: $yellow;
+  padding: 64px 0;
+}
+
+//Work
+
+#work{
+  background-color: $purple;
+  padding: 64px 0;
+}
+
+#work label {
+  color: $white;
+}
+.slick-initialized .slick-slide {
+  text-align: center;
+}
+
+.slick-dots{ 
+  text-align: center;
+  li {
+    display: inline-block;
+    margin: 0 auto;
+    button{
+      background: white;
+      border: solid 3px white;
+      padding: 0px 10px;
+      margin: 24px 10px;
+    }
+  }
+}
+
+.slick-active {
+  button {
+    background: transparent !important;
+    color: $white;
+    border: solid 3px $yellow !important;
+  }
+}
+
+footer {
+  background-color: $purple;
+  padding: 8px 0;
+}
+
+footer .social-items {
+  text-align: center;
+  .social-item {
+    display: inline-block;
+    margin-right: 16px;
+    a {
+      font-size: 20px;
+      color: $white;
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
 //Decoration
 .underline {
   position: relative;
@@ -168,20 +305,45 @@ section {
   content: "";
   width: 100%;
   height: 1.5vw;
-  bottom: 0px;
-  background: #c0c3fa;
+  bottom: 10px;
+  background: $purple_tone_two;
   z-index: -1;
+}
+
+.underline-yellow {
+  z-index: 9;
+}
+.underline-yellow:before {
+  @extend .underline:before;
+  background: $yellow;
+  bottom: 3px !important;
+}
+
+.underline-purple {
+  z-index: 9;
+}
+.underline-purple:before {
+  @extend .underline:before;
+  background: $purple_tone_two;
+  bottom: 3px !important;
+}
+
+.underline-medium:before {
+  @extend .underline:before;
+  height: 1.20vw;
+  bottom: 8px !important;
 }
 
 .words_list .underline:before {
   @extend .underline:before;
-  bottom: 10px !important;
+  bottom: 20px !important;
 }
 
-.hover-underline {
+.hover-underline, .hover-underline:hover {
   position: relative;
   cursor: pointer;
-  color:  #FF888E;
+  color:  $purple;
+  text-decoration: none;
 }
 
 .hover-underline:before {
@@ -189,9 +351,9 @@ section {
   position: absolute;
   width: 100%;
   height: 3px;
-  bottom:-5px;
+  bottom:0px;
   left: 0;
-  background-color: #c0c3fa;
+  background-color: $purple;
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out 0s;
@@ -200,7 +362,7 @@ section {
 .hover-underline:hover:before {
   visibility: visible;
   transform: scaleX(1);
-  color:  #FF888E;
+  color:  $purple;
   text-decoration: none;
 }
 
@@ -263,4 +425,61 @@ section {
   20% { opacity: 0; transform: translateY(30px); }
   80% { opacity: 0; }
   100% { opacity: 0; }
+}
+
+@media (max-width: 960px){
+  section#introduction {
+    margin-bottom: 200px;
+    margin-top: 48px;
+  }
+  #introduction h1 {
+    font-size: ($main_title - 16px);
+  }
+  
+  section h1.title {
+    font-size: ($title - 8px) !important;
+  }
+
+  .right-menu a {
+    font-size: 18px;
+    padding: 5px;
+  }
+
+  .square {
+    left: 0;
+  }
+
+  .rectangle {
+    right: 25px !important;
+  }
+
+  .square--two {
+    left: 200px !important;
+    top: -130px !important;
+  }
+
+  .retro-frame {
+    width: 100%;
+  }
+
+  .close-frame {
+    width: 10%;
+  }
+
+  .content-about-me {
+    padding: 50px 25px;
+  }
+
+  .underline:before {
+    height: 25px;
+  }
+
+  .underline-medium:before {
+    height: 20px;
+  }
+
+  .video {
+    width: 300px !important;
+  }
+  
 }
